@@ -19,6 +19,7 @@ import org.slf4j.Logger;
 @Mod(Helldivers.MOD_ID)
 public class Helldivers
 {
+
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "helldivers";
     // Directly reference a slf4j logger
