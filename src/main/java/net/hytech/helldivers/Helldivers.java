@@ -1,15 +1,17 @@
 package net.hytech.helldivers;
 
 import com.mojang.logging.LogUtils;
+import net.hytech.helldivers.block.ModBlocks;
+import net.hytech.helldivers.item.ModCreativeModTabs;
+import net.hytech.helldivers.item.Moditems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -29,15 +31,19 @@ public class Helldivers
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+
+        Moditems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
     }
+
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
@@ -47,7 +53,10 @@ public class Helldivers
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+    if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        event.accept(Moditems.SAPPHIRE);
+        event.accept(Moditems.Frag_Grenade);
+    }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
