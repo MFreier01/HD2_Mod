@@ -1,9 +1,13 @@
 {
   "item.helldivers.sapphire": "Sapphire",
   "item.helldivers.frag_grenade": "Frag Grenade",
+  "item.helldivers.raw_e710": "Raw E-710",
+
 
   "block.helldivers.terminid_wall": "Terminid Wall",
   "block.helldivers.terminid_hive": "Terminid Hive",
+  "block.helldivers.reinforced_terminid_wall": "Reinforced Terminid Wall",
+  "block.helldivers.terminid_stone": "Terminid Stone",
 
   "creativetab.helldivers_tab": "Helldivers"
 

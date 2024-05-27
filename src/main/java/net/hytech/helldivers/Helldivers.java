@@ -2,8 +2,12 @@ package net.hytech.helldivers;
 
 import com.mojang.logging.LogUtils;
 import net.hytech.helldivers.block.ModBlocks;
+import net.hytech.helldivers.entity.ModEntityTypes;
+import net.hytech.helldivers.entity.client.scavengerRenderer;
+import net.hytech.helldivers.entity.custom.ScavengerEntity;
 import net.hytech.helldivers.item.ModCreativeModTabs;
 import net.hytech.helldivers.item.Moditems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,6 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.geckolib.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Helldivers.MOD_ID)
@@ -36,11 +41,16 @@ public class Helldivers
         Moditems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModEntityTypes.register(modEventBus);
+
+        GeckoLib.initialize();
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
+
 
     }
 
@@ -56,6 +66,7 @@ public class Helldivers
     if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
         event.accept(Moditems.SAPPHIRE);
         event.accept(Moditems.Frag_Grenade);
+        event.accept(Moditems.Raw_E710);
     }
     }
 
@@ -73,7 +84,7 @@ public class Helldivers
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            EntityRenderers.register(ModEntityTypes.SCAVENGER.get(), scavengerRenderer::new);
         }
     }
 }

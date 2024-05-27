@@ -20,10 +20,15 @@ public class ModCreativeModTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Moditems.Frag_Grenade.get()))
             .title(Component.translatable("creativetab.helldivers_tab"))
                     .displayItems((pParameters, pOutput) -> {
+
                         pOutput.accept(Moditems.Frag_Grenade.get());
                         pOutput.accept(Moditems.SAPPHIRE.get());
+                        pOutput.accept(Moditems.Raw_E710.get());
                         pOutput.accept(ModBlocks.TERMINID_WALL.get());
                         pOutput.accept(ModBlocks.TERMINID_HIVE.get());
+                        pOutput.accept(ModBlocks.TERMINID_STONE.get());
+                        pOutput.accept(ModBlocks.REINFORCED_TERMINID_WALL.get());
+
 
                     })
                     .build());

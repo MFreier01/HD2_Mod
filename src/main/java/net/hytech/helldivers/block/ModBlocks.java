@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.client.event.RenderHighlightEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,6 +24,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.GRAVEL)));
     public static final RegistryObject<Block> TERMINID_HIVE = registerBLock("terminid_hive",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AZALEA)));
+    public static final RegistryObject<Block> TERMINID_STONE = registerBLock("terminid_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> REINFORCED_TERMINID_WALL = registerBLock("reinforced_terminid_wall",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.STONE)));
 
 
     private static <T extends Block> RegistryObject<T> registerBLock(String name, Supplier<T> block) {
