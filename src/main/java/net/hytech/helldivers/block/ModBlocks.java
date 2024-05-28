@@ -1,6 +1,7 @@
 package net.hytech.helldivers.block;
 
 import net.hytech.helldivers.Helldivers;
+import net.hytech.helldivers.block.custom.automatoncontactmineBlock;
 import net.hytech.helldivers.item.Moditems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,8 +21,10 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Helldivers.MOD_ID);
 
 
-    public static final RegistryObject<Block> TERMINID_WALL =  registerBLock("terminid_wall",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.GRAVEL)));
+   // public static final RegistryObject<Block> TERMINID_WALL =  registerBLock("terminid_wall",
+    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.GRAVEL)));
+   public static final RegistryObject<Block> TERMINID_WALL = registerBLock("terminid_wall",
+           () -> new automatoncontactmineBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.GRAVEL)));
     public static final RegistryObject<Block> TERMINID_HIVE = registerBLock("terminid_hive",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AZALEA)));
     public static final RegistryObject<Block> TERMINID_STONE = registerBLock("terminid_stone",
