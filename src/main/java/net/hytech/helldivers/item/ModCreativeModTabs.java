@@ -24,6 +24,9 @@ public class ModCreativeModTabs {
                         pOutput.accept(Moditems.Frag_Grenade.get());
                         pOutput.accept(Moditems.SAPPHIRE.get());
                         pOutput.accept(Moditems.Raw_E710.get());
+
+                        pOutput.accept(Moditems.AR23_LIBERATOR.get());
+
                         pOutput.accept(ModBlocks.TERMINID_WALL.get());
                         pOutput.accept(ModBlocks.TERMINID_HIVE.get());
                         pOutput.accept(ModBlocks.TERMINID_STONE.get());

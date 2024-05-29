@@ -15,7 +15,8 @@
   "tooltip.helldivers.frag_grenade.tooltip": "Explodes Upon Impact",
 
 
-
+  //GUNS
+  "item.helldivers.ar23_liberator": "AR-23 Liberator",
 
   //OTHER
   "creativetab.helldivers_tab": "Helldivers"

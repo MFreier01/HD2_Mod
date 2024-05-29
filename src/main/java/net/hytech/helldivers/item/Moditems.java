@@ -2,6 +2,7 @@ package net.hytech.helldivers.item;
 
 import net.hytech.helldivers.Helldivers;
 import net.hytech.helldivers.entity.ModEntityTypes;
+import net.hytech.helldivers.item.custom.ar23_liberatorItem;
 import net.hytech.helldivers.item.custom.grenadeItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -16,7 +17,8 @@ public class Moditems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Helldivers.MOD_ID);
 
     //Guns
-
+    public static final RegistryObject<Item> AR23_LIBERATOR = ITEMS.register("ar23_liberator",
+            () -> new ar23_liberatorItem(new Item.Properties().stacksTo(1)));
 
 
     //Other Items
