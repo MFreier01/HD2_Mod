@@ -10,8 +10,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import javax.swing.*;
-
 public class Moditems {
 
     public static final DeferredRegister<Item> ITEMS =

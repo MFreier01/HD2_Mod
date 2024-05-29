@@ -1,5 +1,6 @@
 package net.hytech.helldivers.item.custom;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -9,7 +10,11 @@ import net.minecraft.world.entity.player.Player;
 import net.hytech.helldivers.entity.projectile.grenade_explosion;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class grenadeItem extends Item {
 
@@ -31,7 +36,13 @@ public class grenadeItem extends Item {
             $$3.shrink(1);
         }
 
+
         return InteractionResultHolder.sidedSuccess($$3, pLevel.isClientSide());
     }
 
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("tooltip.helldivers.frag_grenade.tooltip"));
+        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+    }
 }

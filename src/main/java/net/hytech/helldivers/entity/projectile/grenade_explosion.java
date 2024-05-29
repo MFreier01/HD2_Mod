@@ -10,9 +10,9 @@ import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+
 
 public class grenade_explosion extends ThrowableItemProjectile {
 
@@ -67,12 +67,15 @@ public class grenade_explosion extends ThrowableItemProjectile {
         }
     }
 
+
+
+
     protected void onHit(HitResult pResult) {
-        super.onHit(pResult);
+      super.onHit(pResult);
         if (!this.level().isClientSide) {
             this.level().explode(this, this.getX(), this.getY(), this.getZ(), 4.0F, false, Level.ExplosionInteraction.MOB);
-            this.discard();
-        }
+           this.discard();
+       }
 
     }
 
