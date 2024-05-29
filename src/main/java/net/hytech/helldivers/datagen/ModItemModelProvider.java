@@ -21,6 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(Moditems.Raw_E710);
+        simpleItem(Moditems.Frag_Grenade);
         simpleItem(Moditems.SAPPHIRE);
 
 
